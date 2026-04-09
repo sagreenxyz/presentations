@@ -1,0 +1,86 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const presentations = [
+  {
+    title: "Coming Soon",
+    description: "New presentations will be added here.",
+    tags: ["TBD"],
+    href: "#",
+  },
+];
+---
+
+<Layout title="Presentations">
+  <!-- Hero Section -->
+  <section class="hero min-h-[60vh] bg-base-200">
+    <div class="hero-content text-center">
+      <div class="max-w-2xl">
+        <h1 class="text-5xl font-bold mb-6">Presentations</h1>
+        <p class="text-xl text-base-content/70 mb-8">
+          A curated collection of slide decks, talks, and learning materials.
+          Explore topics ranging from software development to architecture and
+          beyond.
+        </p>
+        <a href="#presentations" class="btn btn-primary btn-lg">
+          Browse Presentations
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Presentations Grid -->
+  <section id="presentations" class="container mx-auto px-4 py-16">
+    <h2 class="text-3xl font-bold text-center mb-12">All Presentations</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {
+        presentations.map((pres) => (
+          <div class="card bg-base-100 shadow-md hover:shadow-lg transition-shadow">
+            <div class="card-body">
+              <h3 class="card-title">{pres.title}</h3>
+              <p class="text-base-content/70">{pres.description}</p>
+              <div class="flex flex-wrap gap-2 mt-2">
+                {pres.tags.map((tag) => (
+                  <span class="badge badge-outline badge-sm">{tag}</span>
+                ))}
+              </div>
+              <div class="card-actions justify-end mt-4">
+                <a
+                  href={pres.href}
+                  class="btn btn-primary btn-sm"
+                  aria-disabled={pres.href === "#"}
+                >
+                  View →
+                </a>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="bg-base-200 py-12">
+    <div class="container mx-auto px-4">
+      <div class="stats stats-vertical md:stats-horizontal shadow w-full">
+        <div class="stat place-items-center">
+          <div class="stat-title">Total Presentations</div>
+          <div class="stat-value text-primary">{presentations.length}</div>
+          <div class="stat-desc">And growing</div>
+        </div>
+        <div class="stat place-items-center">
+          <div class="stat-title">Built With</div>
+          <div class="stat-value text-secondary">Astro</div>
+          <div class="stat-desc">+ DaisyUI</div>
+        </div>
+        <div class="stat place-items-center">
+          <div class="stat-title">Hosted On</div>
+          <div class="stat-value">GitHub</div>
+          <div class="stat-desc">Pages</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

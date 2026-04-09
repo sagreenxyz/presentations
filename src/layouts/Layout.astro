@@ -1,0 +1,48 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Presentations - A collection of slide decks and talks" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" data-theme="corporate">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/presentations/favicon.svg" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <header class="navbar bg-base-100 shadow-sm">
+      <div class="navbar-start">
+        <a href="/presentations/" class="btn btn-ghost text-xl font-bold">
+          📊 Presentations
+        </a>
+      </div>
+      <div class="navbar-end">
+        <a
+          href="https://github.com/sagreenxyz/presentations"
+          class="btn btn-ghost btn-sm"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="footer footer-center p-6 bg-base-200 text-base-content mt-16">
+      <p class="text-sm">© {new Date().getFullYear()} Presentations. Built with Astro & DaisyUI.</p>
+    </footer>
+  </body>
+</html>
