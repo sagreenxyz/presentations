@@ -19,47 +19,176 @@ import "../../styles/global.css";
       <!-- Main content -->
       <div class="drawer-content flex flex-col min-h-screen">
 
-        <!-- Navbar -->
-        <nav class="navbar bg-base-100 shadow-sm sticky top-0 z-10">
-          <div class="navbar-start">
-            <a href="/presentations/" class="btn btn-ghost text-xl font-bold">
-              📊 Presentations
-            </a>
-          </div>
-          <div class="navbar-center hidden md:flex">
-            <span class="text-lg font-semibold">Introduction</span>
-          </div>
-          <div class="navbar-end gap-2">
-            <a
-              href="https://github.com/sagreenxyz/presentations"
-              class="btn btn-ghost btn-sm"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              GitHub
-            </a>
-          </div>
-        </nav>
+        <!-- Carousel of Hero Slides -->
+        <section class="flex-1 flex flex-col">
+          <div class="carousel w-full flex-1" id="intro-carousel">
 
-        <!-- Hero Section -->
-        <section class="hero flex-1 bg-base-200 min-h-[70vh]">
-          <div class="hero-content text-center">
-            <div class="max-w-2xl">
-              <h1 class="text-5xl font-bold mb-4">Introduction</h1>
-              <p class="text-xl text-base-content/70 mb-8">
-                A first look at the presentations site — covering the tools,
-                structure, and workflow used to build and publish slide decks.
-              </p>
-              <div class="flex flex-wrap gap-4 justify-center">
-                <!-- Opens the Drawer -->
-                <label for="intro-drawer" class="btn btn-primary btn-lg drawer-button">
-                  📋 Open Outline
-                </label>
-                <a href="/presentations/" class="btn btn-outline btn-lg">
-                  ← Back
-                </a>
+            <!-- Slide 1: Introduction -->
+            <div id="slide1" class="carousel-item relative w-full min-h-[70vh] hero bg-base-200">
+              <div class="hero-content text-center">
+                <div class="max-w-2xl">
+                  <div class="badge badge-primary badge-lg mb-4">1 / 6</div>
+                  <h1 class="text-5xl font-bold mb-4">Introduction</h1>
+                  <p class="text-xl text-base-content/70 mb-8">
+                    A first look at the presentations site — covering the tools,
+                    structure, and workflow used to build and publish slide decks.
+                  </p>
+                  <div class="flex flex-wrap gap-4 justify-center">
+                    <label for="intro-drawer" class="btn btn-primary btn-lg drawer-button">
+                      📋 Open Outline
+                    </label>
+                    <a href="/presentations/" class="btn btn-outline btn-lg">← Back</a>
+                  </div>
+                </div>
+              </div>
+              <div class="absolute right-4 top-1/2 -translate-y-1/2">
+                <a href="#slide2" class="btn btn-circle btn-primary btn-lg">❯</a>
               </div>
             </div>
+
+            <!-- Slide 2: Project Setup -->
+            <div id="slide2" class="carousel-item relative w-full min-h-[70vh] hero bg-primary text-primary-content">
+              <div class="hero-content text-center">
+                <div class="max-w-2xl">
+                  <div class="badge badge-outline badge-lg mb-4">2 / 6</div>
+                  <h2 class="text-5xl font-bold mb-4">Project Setup</h2>
+                  <p class="text-xl opacity-80 mb-8">
+                    Bootstrap the project with <strong>Astro</strong>, integrate
+                    <strong>Tailwind CSS v4</strong> and <strong>DaisyUI v5</strong>,
+                    and configure the repository for GitHub Pages deployment.
+                  </p>
+                  <div class="flex flex-wrap gap-2 justify-center">
+                    <span class="badge badge-lg">Astro 6</span>
+                    <span class="badge badge-lg">Tailwind CSS v4</span>
+                    <span class="badge badge-lg">DaisyUI v5</span>
+                    <span class="badge badge-lg">Node.js</span>
+                  </div>
+                </div>
+              </div>
+              <div class="absolute left-4 top-1/2 -translate-y-1/2">
+                <a href="#slide1" class="btn btn-circle btn-lg">❮</a>
+              </div>
+              <div class="absolute right-4 top-1/2 -translate-y-1/2">
+                <a href="#slide3" class="btn btn-circle btn-lg">❯</a>
+              </div>
+            </div>
+
+            <!-- Slide 3: Astro Basics -->
+            <div id="slide3" class="carousel-item relative w-full min-h-[70vh] hero bg-secondary text-secondary-content">
+              <div class="hero-content text-center">
+                <div class="max-w-2xl">
+                  <div class="badge badge-outline badge-lg mb-4">3 / 6</div>
+                  <h2 class="text-5xl font-bold mb-4">Astro Basics</h2>
+                  <p class="text-xl opacity-80 mb-8">
+                    Explore Astro's file-based routing, <code>.astro</code> component syntax,
+                    layouts, and how islands architecture lets you mix static and interactive UI.
+                  </p>
+                  <ul class="steps steps-vertical text-left mx-auto max-w-xs">
+                    <li class="step step-secondary">Pages &amp; Routing</li>
+                    <li class="step step-secondary">Layouts &amp; Slots</li>
+                    <li class="step step-secondary">Components</li>
+                    <li class="step step-secondary">Static Output</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="absolute left-4 top-1/2 -translate-y-1/2">
+                <a href="#slide2" class="btn btn-circle btn-lg">❮</a>
+              </div>
+              <div class="absolute right-4 top-1/2 -translate-y-1/2">
+                <a href="#slide4" class="btn btn-circle btn-lg">❯</a>
+              </div>
+            </div>
+
+            <!-- Slide 4: DaisyUI Components -->
+            <div id="slide4" class="carousel-item relative w-full min-h-[70vh] hero bg-accent text-accent-content">
+              <div class="hero-content text-center">
+                <div class="max-w-2xl">
+                  <div class="badge badge-outline badge-lg mb-4">4 / 6</div>
+                  <h2 class="text-5xl font-bold mb-4">DaisyUI Components</h2>
+                  <p class="text-xl opacity-80 mb-8">
+                    DaisyUI v5 provides semantic Tailwind component classes — buttons, heroes,
+                    carousels, drawers, navbars, and more — all themeable with a single
+                    <code>data-theme</code> attribute.
+                  </p>
+                  <div class="flex flex-wrap gap-3 justify-center">
+                    <span class="btn btn-sm">Button</span>
+                    <span class="badge badge-lg">Badge</span>
+                    <span class="kbd">kbd</span>
+                    <div class="avatar placeholder"><div class="bg-neutral text-neutral-content rounded-full w-10"><span>UI</span></div></div>
+                  </div>
+                </div>
+              </div>
+              <div class="absolute left-4 top-1/2 -translate-y-1/2">
+                <a href="#slide3" class="btn btn-circle btn-lg">❮</a>
+              </div>
+              <div class="absolute right-4 top-1/2 -translate-y-1/2">
+                <a href="#slide5" class="btn btn-circle btn-lg">❯</a>
+              </div>
+            </div>
+
+            <!-- Slide 5: Deploying to GitHub Pages -->
+            <div id="slide5" class="carousel-item relative w-full min-h-[70vh] hero bg-neutral text-neutral-content">
+              <div class="hero-content text-center">
+                <div class="max-w-2xl">
+                  <div class="badge badge-outline badge-lg mb-4">5 / 6</div>
+                  <h2 class="text-5xl font-bold mb-4">Deploying to GitHub Pages</h2>
+                  <p class="text-xl opacity-80 mb-8">
+                    Configure Astro's <code>base</code> path, set up a GitHub Actions workflow,
+                    and publish your static site automatically on every push to <code>main</code>.
+                  </p>
+                  <div class="flex flex-wrap gap-3 justify-center">
+                    <span class="badge badge-lg">GitHub Actions</span>
+                    <span class="badge badge-lg">Static Adapter</span>
+                    <span class="badge badge-lg">base=/presentations</span>
+                  </div>
+                </div>
+              </div>
+              <div class="absolute left-4 top-1/2 -translate-y-1/2">
+                <a href="#slide4" class="btn btn-circle btn-lg">❮</a>
+              </div>
+              <div class="absolute right-4 top-1/2 -translate-y-1/2">
+                <a href="#slide6" class="btn btn-circle btn-lg">❯</a>
+              </div>
+            </div>
+
+            <!-- Slide 6: Q & A -->
+            <div id="slide6" class="carousel-item relative w-full min-h-[70vh] hero bg-base-200">
+              <div class="hero-content text-center">
+                <div class="max-w-2xl">
+                  <div class="badge badge-primary badge-lg mb-4">6 / 6</div>
+                  <h2 class="text-5xl font-bold mb-4">Q &amp; A</h2>
+                  <p class="text-xl text-base-content/70 mb-8">
+                    Questions? Ideas? Let's talk — about the stack, the workflow,
+                    or anything else from today's presentation.
+                  </p>
+                  <div class="flex flex-wrap gap-4 justify-center">
+                    <a
+                      href="https://github.com/sagreenxyz/presentations"
+                      class="btn btn-primary btn-lg"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      ⭐ Star on GitHub
+                    </a>
+                    <a href="/presentations/" class="btn btn-outline btn-lg">← Back to Home</a>
+                  </div>
+                </div>
+              </div>
+              <div class="absolute left-4 top-1/2 -translate-y-1/2">
+                <a href="#slide5" class="btn btn-circle btn-primary btn-lg">❮</a>
+              </div>
+            </div>
+
+          </div><!-- /carousel -->
+
+          <!-- Slide indicator dots -->
+          <div class="flex justify-center gap-2 py-4 bg-base-100">
+            <a href="#slide1" class="btn btn-xs btn-circle">1</a>
+            <a href="#slide2" class="btn btn-xs btn-circle">2</a>
+            <a href="#slide3" class="btn btn-xs btn-circle">3</a>
+            <a href="#slide4" class="btn btn-xs btn-circle">4</a>
+            <a href="#slide5" class="btn btn-xs btn-circle">5</a>
+            <a href="#slide6" class="btn btn-xs btn-circle">6</a>
           </div>
         </section>
 
