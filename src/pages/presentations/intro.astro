@@ -1,0 +1,98 @@
+---
+import "../../styles/global.css";
+---
+
+<!doctype html>
+<html lang="en" data-theme="corporate">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Introduction — a first look at the presentations site." />
+    <link rel="icon" type="image/svg+xml" href="/presentations/favicon.svg" />
+    <title>Introduction | Presentations</title>
+  </head>
+  <body>
+    <!-- Drawer wraps the entire page layout -->
+    <div class="drawer">
+      <input id="intro-drawer" type="checkbox" class="drawer-toggle" />
+
+      <!-- Main content -->
+      <div class="drawer-content flex flex-col min-h-screen">
+
+        <!-- Navbar -->
+        <nav class="navbar bg-base-100 shadow-sm sticky top-0 z-10">
+          <div class="navbar-start">
+            <a href="/presentations/" class="btn btn-ghost text-xl font-bold">
+              📊 Presentations
+            </a>
+          </div>
+          <div class="navbar-center hidden md:flex">
+            <span class="text-lg font-semibold">Introduction</span>
+          </div>
+          <div class="navbar-end gap-2">
+            <a
+              href="https://github.com/sagreenxyz/presentations"
+              class="btn btn-ghost btn-sm"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub
+            </a>
+          </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="hero flex-1 bg-base-200 min-h-[70vh]">
+          <div class="hero-content text-center">
+            <div class="max-w-2xl">
+              <h1 class="text-5xl font-bold mb-4">Introduction</h1>
+              <p class="text-xl text-base-content/70 mb-8">
+                A first look at the presentations site — covering the tools,
+                structure, and workflow used to build and publish slide decks.
+              </p>
+              <div class="flex flex-wrap gap-4 justify-center">
+                <!-- Opens the Drawer -->
+                <label for="intro-drawer" class="btn btn-primary btn-lg drawer-button">
+                  📋 Open Outline
+                </label>
+                <a href="/presentations/" class="btn btn-outline btn-lg">
+                  ← Back
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer footer-center p-6 bg-base-200 text-base-content border-t border-base-300">
+          <p class="text-sm">
+            © {new Date().getFullYear()} Presentations. Built with Astro &amp; DaisyUI.
+          </p>
+        </footer>
+
+      </div><!-- /drawer-content -->
+
+      <!-- Drawer side panel -->
+      <div class="drawer-side z-20">
+        <label for="intro-drawer" aria-label="close drawer" class="drawer-overlay"></label>
+        <aside class="bg-base-200 min-h-full w-80 p-6 flex flex-col gap-4">
+          <h2 class="text-2xl font-bold">Outline</h2>
+          <ul class="menu menu-lg gap-1 p-0">
+            <li><a>1. Introduction</a></li>
+            <li><a>2. Project Setup</a></li>
+            <li><a>3. Astro Basics</a></li>
+            <li><a>4. DaisyUI Components</a></li>
+            <li><a>5. Deploying to GitHub Pages</a></li>
+            <li><a>6. Q &amp; A</a></li>
+          </ul>
+          <div class="mt-auto">
+            <label for="intro-drawer" class="btn btn-outline btn-sm w-full">
+              Close
+            </label>
+          </div>
+        </aside>
+      </div><!-- /drawer-side -->
+
+    </div><!-- /drawer -->
+  </body>
+</html>
